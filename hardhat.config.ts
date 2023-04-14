@@ -23,11 +23,25 @@ export default {
     kovan: {
       url: `https://kovan.infura.io/v3/${process.env.INFURA_API_KEY}`,
     },
+    testnet: {
+      url: 'http://evmtestnet.confluxrpc.com',
+      accounts: [
+        ''
+      ]
+    },
   },
   etherscan: {
-    // Your API key for Etherscan
-    // Obtain one at https://etherscan.io/
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: 'an API key',
+    customChains: [
+      {
+        network: "testnet",
+        chainId: 71,
+        urls: {
+          apiURL: "https://evmapi-testnet.confluxscan.net/api",
+          browserURL: "https://evmapi-testnet.confluxscan.net"
+        }
+      }
+    ]
   },
   solidity: {
     version: '0.7.6',
